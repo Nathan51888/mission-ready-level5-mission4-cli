@@ -42,4 +42,10 @@ async function listCars() {
     mongoose.connection.close();
 }
 
-export { init, listCars }
+async function removeCar(_id) {
+    await Car.deleteOne({ _id }); 
+    console.log('Car deleted');
+    mongoose.connection.close();
+}
+
+export { init, listCars, removeCar }
