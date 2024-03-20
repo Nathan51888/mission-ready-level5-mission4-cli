@@ -1,6 +1,25 @@
 import { program } from 'commander';
+import inquirer from 'inquirer';
 
-import { init, findCarByBrand, listCars, removeCar } from './index.js';
+const questions = [
+    {
+        type: 'input',
+        name: 'brand',
+        message: 'Car Brand'
+    },
+    {
+        type: 'input',
+        name: 'model',
+        message: 'Car Model'
+    },
+    {
+        type: 'input',
+        name: 'year',
+        message: 'Year'
+    },
+]
+
+import { init, findCarByBrand, listCars, addCar, removeCar } from './index.js';
 
 // Init
 program
@@ -21,6 +40,15 @@ program
     .alias('ls')
     .description('List all cars')
     .action(() => listCars());
+
+// Add Command
+program
+    .command('add')
+    .alias('a')
+    .description('Add a car')
+    .action(() => { 
+        inquirer.prompt(questions).then(answers => addCar(answers));
+    })
 
 // Remove Command
 program

@@ -134,10 +134,17 @@ async function listCars() {
     mongoose.connection.close();
 }
 
+async function addCar(car) {
+    const addedCar = await Car.create(car);
+    console.log(addedCar);
+    console.log('Car added');
+    mongoose.connection.close();
+}
+
 async function removeCar(_id) {
     await Car.deleteOne({ _id }); 
     console.log('Car deleted');
     mongoose.connection.close();
 }
 
-export { init, findCarByBrand, listCars, removeCar }
+export { init, findCarByBrand, listCars, addCar, removeCar }
