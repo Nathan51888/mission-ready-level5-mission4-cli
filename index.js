@@ -4,11 +4,6 @@ mongoose.connect('mongodb://localhost:27017/test');
 
 import Car from './model/car.js';
 
-async function main() {
-    const car = await Car.create({ brand: 'Civic', year: '2020' });
-    console.log(car);
-}
-
 const initCars = [
     {
         brand: 'Hyundai',
@@ -141,10 +136,16 @@ async function addCar(car) {
     mongoose.connection.close();
 }
 
+async function updateCar(_id, car) {
+    await Car.updateOne({ _id }, car);
+    console.log('Car update');
+    mongoose.connection.close();
+}
+
 async function removeCar(_id) {
     await Car.deleteOne({ _id }); 
     console.log('Car deleted');
     mongoose.connection.close();
 }
 
-export { init, findCarByBrand, listCars, addCar, removeCar }
+export { init, findCarByBrand, listCars, addCar, updateCar, removeCar }

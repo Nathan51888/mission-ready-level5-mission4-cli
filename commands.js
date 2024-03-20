@@ -19,7 +19,7 @@ const questions = [
     },
 ]
 
-import { init, findCarByBrand, listCars, addCar, removeCar } from './index.js';
+import { init, findCarByBrand, listCars, addCar, updateCar, removeCar } from './index.js';
 
 // Init
 program
@@ -48,6 +48,15 @@ program
     .description('Add a car')
     .action(() => { 
         inquirer.prompt(questions).then(answers => addCar(answers));
+    })
+
+// Update Command
+program
+    .command('update <_id>')
+    .alias('u')
+    .description('Update a car')
+    .action((_id) => { 
+        inquirer.prompt(questions).then(answers => updateCar(_id, answers));
     })
 
 // Remove Command
