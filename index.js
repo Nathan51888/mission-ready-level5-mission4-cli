@@ -11,20 +11,104 @@ async function main() {
 
 const initCars = [
     {
-        brand: 'Zastava',
+        brand: 'Hyundai',
+        model: 'Kona',
         year: '2020',
     },
     {
-        brand: 'Subaru',
-        year: '1953',
+        brand: 'Hyundai',
+        model: 'HB20',
+        year: '2018',
     },
     {
-        brand: 'Irizar',
-        year: '1889',
+        brand: 'Hyundai',
+        model: 'i20',
+        year: '2012',
     },
     {
-        brand: 'Civic',
+        brand: 'Hyundai',
+        model: 'Sonata',
+        year: '2017',
+    },
+    {
+        brand: 'Kia',
+        model: 'Picanto',
+        year: '2004',
+    },
+    {
+        brand: 'Kia',
+        model: 'Rio',
+        year: '2010',
+    },
+    {
+        brand: 'Kia',
+        model: 'K9',
+        year: '2012',
+    },
+    {
+        brand: 'Kia',
+        model: 'Proceed',
+        year: '2006',
+    },
+    {
+        brand: 'Mazda',
+        model: 'Mazda CX-30',
         year: '2020',
+    },
+    {
+        brand: 'Mazda',
+        model: 'Mazda3',
+        year: '2013',
+    },
+    {
+        brand: 'Mazda',
+        model: 'Mazda CX-90',
+        year: '2023',
+    },
+    {
+        brand: 'Mazda',
+        model: 'Mazda CX-5',
+        year: '2012',
+    },
+    {
+        brand: 'Mercedez-Benz',
+        model: 'Mercedes-Benz EQS',
+        year: '2022',
+    },
+    {
+        brand: 'Mercedez-Benz',
+        model: 'A-class',
+        year: '2018',
+    },
+    {
+        brand: 'Mercedez-Benz',
+        model: 'Mercedes-Benz EQE',
+        year: '2022',
+    },
+    {
+        brand: 'Mercedez-Benz',
+        model: 'Mercedes-Benz EQS SUV',
+        year: '2022',
+    },
+    {
+        brand: 'Toyota',
+        model: 'Toyota Corolla Cross',
+        year: '2021',
+    },
+    {
+        brand: 'Toyota',
+        model: 'Avaon',
+        year: '2018',
+    },
+    {
+        brand: 'Toyota',
+        model: 'Corolla',
+        year: '2015',
+    },
+    {
+        brand: 'Toyota',
+        model: 'Allion',
+        year: '2021',
     },
 ]
 
