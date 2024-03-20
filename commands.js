@@ -1,6 +1,12 @@
 import { program } from 'commander';
 
-import { listCars } from './index.js';
+import { init, listCars } from './index.js';
+
+// Init
+program
+    .command('init')
+    .description('Initialize database')
+    .action(() => init());
 
 // List Command
 program

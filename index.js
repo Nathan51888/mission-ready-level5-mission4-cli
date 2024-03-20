@@ -9,6 +9,32 @@ async function main() {
     console.log(car);
 }
 
+const initCars = [
+    {
+        brand: 'Zastava',
+        year: '2020',
+    },
+    {
+        brand: 'Subaru',
+        year: '1953',
+    },
+    {
+        brand: 'Irizar',
+        year: '1889',
+    },
+    {
+        brand: 'Civic',
+        year: '2020',
+    },
+]
+
+async function init() {
+    await Car.deleteMany();
+    const cars = await Car.insertMany(initCars);
+    console.log(cars);
+    mongoose.connection.close();
+}
+
 async function listCars() {
     const cars = await Car.find();
     console.log(cars);
@@ -16,4 +42,4 @@ async function listCars() {
     mongoose.connection.close();
 }
 
-export { listCars }
+export { init, listCars }
