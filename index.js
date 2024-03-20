@@ -35,6 +35,14 @@ async function init() {
     mongoose.connection.close();
 }
 
+async function findCarByBrand(brand) {
+    const search = new RegExp(brand, 'i');
+    const car = await Car.find({$or: [{brand: search}]});
+    console.log(car);
+    console.log(`${car.length} matches`);
+    mongoose.connection.close();
+}
+
 async function listCars() {
     const cars = await Car.find();
     console.log(cars);
@@ -48,4 +56,4 @@ async function removeCar(_id) {
     mongoose.connection.close();
 }
 
-export { init, listCars, removeCar }
+export { init, findCarByBrand, listCars, removeCar }

@@ -1,12 +1,19 @@
 import { program } from 'commander';
 
-import { init, listCars, removeCar } from './index.js';
+import { init, findCarByBrand, listCars, removeCar } from './index.js';
 
 // Init
 program
     .command('init')
     .description('Initialize database')
     .action(() => init());
+
+// Find Command
+program
+    .command('find <brand>')
+    .alias('f')
+    .description('Find car by brand')
+    .action(brand => findCarByBrand(brand));
 
 // List Command
 program
